@@ -1,7 +1,16 @@
 # Android Terminologies
 
 ## Anatomy of Android
-Developing Android applications for mobile devices with limited resources requires a thorough understanding of the application lifecycle. Android uses its own terminology for these application building blocks—terms such as Context, Activity, Fragment, Intent, and Service.
+Android applications are built using several fundamental components that work together to provide a smooth user experience. Developing Android applications for mobile devices with limited resources requires a thorough understanding of the **application lifecycle**. Android uses its own terminology for these building blocks—**Context, Activity, Fragment, Intent, and Service**. These components define how an app interacts with the system, users, and other apps.
+
+Each Android app is structured using:
+- **Context**: The core environment providing access to system resources.
+- **Activity**: A single screen where user interactions take place.
+- **Fragment**: A modular UI component within an activity.
+- **Intent**: A message-passing mechanism for navigation and communication.
+- **Service**: Background processes that handle long-running tasks.
+
+Understanding these components is essential for efficient app development, ensuring seamless transitions, smooth multitasking, and optimal resource management.
 
 ## 1. Context
 **Definition:** The Context is the command center of an Android application, providing access to system resources, app files, and services.
