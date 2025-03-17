@@ -30,17 +30,22 @@ Understanding these components is essential for efficient app development, ensur
 ## 2. Activity
 **Definition:** An Activity represents a single screen in an Android application, handling user interactions.
 
-**Real-World App Example: Instagram** 📸  
-- `MainActivity` → Home feed (scrolling through posts)
-- `StoryActivity` → Full-screen view of Instagram Stories
-- `ProfileActivity` → User profile page
-- `ReelsActivity` → Reels section
-- `UploadActivity` → Allows users to upload new photos/videos
+An **Activity** goes through several stages during its lifecycle, as shown in the diagram. Understanding these stages helps in managing resource allocation and preventing memory leaks.
 
-**Key Uses:**
-- Manages the UI of an application
-- Handles different screens in an app
-- Manages user interactions and lifecycle states
+### **Activity Lifecycle Stages:**
+1. **onCreate()** → Activity is created (initialize UI, variables, and resources).
+2. **onStart()** → Activity becomes visible to the user.
+3. **onResume()** → Activity comes to the foreground (user can interact with it).
+4. **onPause()** → Activity is partially visible (e.g., another activity comes over it, like a popup or call screen).
+5. **onStop()** → Activity is no longer visible but still exists in memory.
+6. **onDestroy()** → Activity is being destroyed (cleanup resources, save data if needed).
+7. **onRestart()** → Called when activity is coming back to the foreground after being stopped.
+
+**Real-World Example: A Social Media App (Facebook, Instagram)**
+- **Opening Instagram** → Calls `onCreate()`, `onStart()`, `onResume()`
+- **Switching to another app** → Triggers `onPause()`, `onStop()`
+- **Returning to Instagram** → Calls `onRestart()`, `onStart()`, `onResume()`
+- **Closing the app completely** → Triggers `onDestroy()`
 
 ---
 
@@ -108,4 +113,5 @@ Understanding these components is essential for efficient app development, ensur
 Understanding these Android terminologies is crucial for building efficient and interactive mobile applications. These components work together to provide a seamless user experience, from handling UI elements to managing background processes. 
 
 By leveraging **Activities, Fragments, Intents, Services, and Context**, developers can create feature-rich and responsive Android applications used by millions worldwide.
+
 
