@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+addEventListener("fetch", event => {
+  event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+  try {
+    const response = await fetch(request);
+    if (!response.ok) throw new Error("Origin down"); 
+    return response;
+  } catch (err) {
+    return new Response(`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
